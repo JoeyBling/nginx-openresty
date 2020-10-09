@@ -1,0 +1,14 @@
+admin@tynet.cn - passwd
+
+# 生成授权密码
+
+> 使用OpenSSL
+
+```bash
+# 输出密码
+echo "2434387555@qq.com" | openssl passwd -stdin
+# 使用基于MD5的密码算法输出
+echo "zsw" | openssl passwd -stdin -apr1
+# 生成用户名和密码至指定文件
+sudo sh -c "echo -n 'zhousiwei:' >> ./htpasswd && openssl passwd -apr1 >> ./htpasswd"
+```
